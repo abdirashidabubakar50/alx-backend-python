@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 wait_random = __import__('0-basic_async_syntax').wait_random
 """
 This script defines a function that executes multiple coroutines
