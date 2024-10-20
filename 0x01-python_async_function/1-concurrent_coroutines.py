@@ -10,7 +10,7 @@ import asyncio
 from typing  import List
 
 
-async def wait_n(n: int, max_delay: int) -> List:
+async def wait_n(n: int, max_delay: int) -> List[float]:
     """
     Run n coroutines concurrently, each waiting for a random delay
     up to 'max_delay' seconds. Return the sorted list of delays
