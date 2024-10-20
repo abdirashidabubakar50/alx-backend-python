@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
-
-wait_random = __import__('0-basic_async_syntax').wait_random
+from typing import List
+import asyncio
 """
 This script defines a function that executes multiple coroutines
 at the same time with async
 """
-
-import asyncio
-from typing  import List
+wait_random = __import__('0-basic_async_syntax').wait_random
 
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
@@ -27,14 +25,14 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     # gather results from the  coroutines
     completed_delays = await asyncio.gather(*delay)
 
-    #create a new list to hold the  sorted delays
+    # create a new list to hold the  sorted delays
     sorted_delays = []
 
     # insert delays in sorted order
     for delay in completed_delays:
-        index = 0;
+        index = 0
         while index < len(sorted_delays) and sorted_delays[index] < delay:
             index += 1
         sorted_delays.insert(index, delay)
-    
+
     return sorted_delays
